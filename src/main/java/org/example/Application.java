@@ -106,7 +106,6 @@ public class Application {
         listOfAthletes.add(person3);*/
         // AthleticCompetition athleticCompetition4 = new AthleticCompetition("milan-juve", date1, "descrizione", EventType.PUBLIC,1020 ,location2,listOfAthletes ,person3);
         //ed.save(athleticCompetition4);
-        System.out.println(ed.getAthleticCompetitionByParticipants(pd.getById(28)));
 
 
         em.close();

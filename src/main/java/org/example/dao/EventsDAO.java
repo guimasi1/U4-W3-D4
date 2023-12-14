@@ -94,10 +94,5 @@ public class EventsDAO {
         return query.getResultList();
     }
 
- /*   public List<AthleticCompetition> getAthleticCompetitionByParticipants(Person participant) {
-        TypedQuery<AthleticCompetition> query = em.createQuery("SELECT c FROM AthleticCompetition c JOIN , AthleticCompetition.class);
-        query.setParameter("participant", participant);
-        return query.getResultList();
-    }*/
 
 }
