@@ -10,9 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
 
@@ -33,9 +31,9 @@ public class Application {
         Person person1 = new Person("giorgio", "nannini", "bella@bella.com",birthday1, GenderType.MALE);
         Person person2 = new Person("fra", "maglio", "ciao@ciao.com", birthday1, GenderType.MALE);
         Person person3 = new Person("luca", "matti", "cicci@csdiao.com", birthday1, GenderType.MALE);
-        pd.save(person1);
+       /* pd.save(person1);
         pd.save(person2);
-        pd.save(person3);
+        pd.save(person3);*/
         // CREAZIONE LOCATION
         Location location1 = new Location("capannelle", "Roma");
         Location location2 = new Location("prova1", "cittaprova");
@@ -97,7 +95,19 @@ public class Application {
         // System.out.println(ed.getDrawnFootballMatches());
 
         // EXTRA 2
-        System.out.println(ed.getAthleticCompetitionByWinner());
+
+        System.out.println(ed.getAthleticCompetitionByWinner(pd.getById(28)));
+
+        // EXTRA 3
+
+     /*   Set<Person> listOfAthletes = new HashSet<>();
+        listOfAthletes.add(person1);
+        listOfAthletes.add(person2);
+        listOfAthletes.add(person3);*/
+        // AthleticCompetition athleticCompetition4 = new AthleticCompetition("milan-juve", date1, "descrizione", EventType.PUBLIC,1020 ,location2,listOfAthletes ,person3);
+        //ed.save(athleticCompetition4);
+        System.out.println(ed.getAthleticCompetitionByParticipants(pd.getById(28)));
+
 
         em.close();
         emf.close();

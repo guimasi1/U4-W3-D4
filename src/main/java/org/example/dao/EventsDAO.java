@@ -88,9 +88,16 @@ public class EventsDAO {
         return getDraws.getResultList();
     }
 
-    public List<AthleticCompetition> getAthleticCompetitionByWinner() {
-        TypedQuery<AthleticCompetition> query = em.createQuery("SELECT c FROM AthleticCompetition c GROUP BY c.winner ", AthleticCompetition.class);
+    public List<AthleticCompetition> getAthleticCompetitionByWinner(Person winner) {
+        TypedQuery<AthleticCompetition> query = em.createQuery("SELECT c FROM AthleticCompetition c WHERE c.winner = :winner", AthleticCompetition.class);
+        query.setParameter("winner", winner);
         return query.getResultList();
     }
+
+ /*   public List<AthleticCompetition> getAthleticCompetitionByParticipants(Person participant) {
+        TypedQuery<AthleticCompetition> query = em.createQuery("SELECT c FROM AthleticCompetition c JOIN , AthleticCompetition.class);
+        query.setParameter("participant", participant);
+        return query.getResultList();
+    }*/
 
 }
